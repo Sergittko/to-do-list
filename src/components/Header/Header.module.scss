@@ -1,0 +1,27 @@
+.hedaer_container {
+  height: 80px;
+  padding: 10px;
+  background-color: #2c2f48;
+  color: #dfdfdf;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+
+  display:flex;
+  align-items:center;
+
+  .hedaer_content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: auto;
+
+    .date{
+      margin: auto;
+    }
+
+    img{
+      max-width: 50px;
+      object-fit: cover;
+    }
+  }
+}

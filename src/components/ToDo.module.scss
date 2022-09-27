@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
 
+html {
+  height: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   font-family: 'Mitr', sans-serif;
+  background: rgb(18,30,65);
+  background: linear-gradient(180deg, rgba(18,30,65,1) 0%, rgba(19,19,44,1) 70%);
+
+  &:after {
+    bottom: 0;
+    content: '';
+    width: 100%;
+    filter: blur(145 px);
+    opacity: 0.7;
+    position: absolute;
+    height: 100%;
+    background: radial-gradient(circle, rgba(43,34,101,1) 0%, rgba(0,0,0,0) 100%);
+    z-index: 0;
+  }
 }

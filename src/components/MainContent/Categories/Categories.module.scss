@@ -1,0 +1,106 @@
+.section_container {
+  max-width: 1000px;
+  margin: 30px auto 0;
+  background-color: #434084;
+  border-radius: 10px;
+  padding: 20px 10px 10px;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: calc(100% - 24px);
+    content: "";
+    z-index: 1;
+    background: rgb(67, 64, 132);
+    background: linear-gradient(90deg, rgba(67, 64, 132, 1) 0%, rgba(67, 64, 132, 1) 50%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  &:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: calc(100% - 24px);
+    content: "";
+    z-index: 1;
+    background: rgb(67, 64, 132);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(67, 64, 132, 1) 50%, rgba(67, 64, 132, 1) 100%);
+  }
+
+  h2 {
+    font-size: 26px;
+    text-align: center;
+    margin: 0 0 30px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: scroll;
+    position: relative;
+    padding: 0 0 10px;
+
+    .category_wrapper {
+      max-width: 160px;
+      margin: 0 20px;
+      text-align: center;
+      font-size: 20px;
+      padding: 10px;
+      border-radius: 20px;
+      background: rgb(50, 88, 150);
+      background: linear-gradient(162deg, rgba(50, 88, 150, 1) 0%, rgba(40, 48, 106, 1) 100%);
+
+      &:nth-child(even) {
+        background: rgb(97, 63, 122);
+        background: linear-gradient(194deg, rgba(97, 63, 122, 1) 0%, rgba(139, 42, 95, 1) 100%);
+      }
+
+      .progress_ring__circle {
+        transform-origin: center;
+        transition: stroke-dashoffset 0.3s;
+        transform: scale(-1, 1) rotate(270deg);
+        position: relative;
+
+        // &:after {
+        //   position: absolute;
+        //   top: 0;
+        //   right: 0;
+        //   width: 20px;
+        //   height: 20px;
+        //   content: "";
+        //   z-index: 1;
+        //   background: #fff;
+        // }
+      }
+    }
+  }
+}
+
+.section_container nav {
+  &::-webkit-scrollbar {
+    height: 4px;
+    background: rgb(97, 63, 122);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgb(67, 64, 132);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  &::-webkit-scrollbar-thumb:horizontal {
+    background: #31d255;
+    border-radius: 10px;
+  }
+}

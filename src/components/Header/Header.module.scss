@@ -1,9 +1,11 @@
 .hedaer_container {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 80px;
   padding: 10px;
   background-color: #1c1e2e;
-  color: #dee0e6;
   text-align: center;
   // border-radius: 0 0 20px 20px;
   border-bottom: 2px solid #31d255;

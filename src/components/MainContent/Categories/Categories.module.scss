@@ -61,7 +61,8 @@
       align-items: center;
       justify-content: space-between;
       flex-direction: column;
-      overflow: hidden;
+      overflow-y: clip;
+      cursor: pointer;
       width: 160px;
       height: 184px;
       margin: 0 20px;

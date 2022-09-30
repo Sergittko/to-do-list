@@ -1,5 +1,6 @@
 import style from "./Categories.module.scss";
 import preset from "../../../assets/preset.png";
+import Card from "./Card/Card";
 
 const Categories = () => {
   const tasksData = {
@@ -33,12 +34,12 @@ const Categories = () => {
     NoSection: [
       {
         title: "12",
-        isDone: true,
+        isDone: false,
         creared: "30.09.22",
       },
       {
         title: "123",
-        isDone: false,
+        isDone: true,
         creared: "30.09.22",
       },
       {
@@ -78,67 +79,26 @@ const Categories = () => {
         {keys.map((el, index) => {
           let { radius, circleStyle, percent } = countProgress(values[index]);
           return (
-            <div className={style.category_wrapper} key={el}>
-              <img src={preset} alt="" />
-              <span>{el}</span>
-              <div className={style.progress_wrapper}>
-                <svg className={style.progress_ring} width="120" height="120">
-                  <circle
-                    className={style.progress_ring__circle}
-                    stroke="#c6e5d7"
-                    strokeWidth="10"
-                    cx="60"
-                    cy="60"
-                    r={radius}
-                    fill="transparent"
-                  />
-                  <circle
-                    className={style.progress_ring__circle}
-                    stroke="#31d255"
-                    strokeWidth="10"
-                    cx="60"
-                    cy="60"
-                    r={radius}
-                    fill="transparent"
-                    style={circleStyle}
-                  />
-                </svg>
-                <span>{percent}%</span>
-              </div>
-            </div>
+            <Card
+              key={el}
+              name={el}
+              radius={radius}
+              circleStyle={circleStyle}
+              percent={percent}
+            />
           );
         })}
+
         {[allValues].map(() => {
           let { radius, circleStyle, percent } = countProgress(allValues);
           return (
-            <div className={style.category_wrapper} key={"all"}>
-              <img src={preset} alt="" />
-              <span>All tasks</span>
-              <div className={style.progress_wrapper}>
-                <svg className={style.progress_ring} width="120" height="120">
-                  <circle
-                    className={style.progress_ring__circle}
-                    stroke="#c6e5d7"
-                    strokeWidth="10"
-                    cx="60"
-                    cy="60"
-                    r={radius}
-                    fill="transparent"
-                  />
-                  <circle
-                    className={style.progress_ring__circle}
-                    stroke="#31d255"
-                    strokeWidth="10"
-                    cx="60"
-                    cy="60"
-                    r={radius}
-                    fill="transparent"
-                    style={circleStyle}
-                  />
-                </svg>
-                <span>{percent}%</span>
-              </div>
-            </div>
+            <Card
+              key="all"
+              name="All tasks"
+              radius={radius}
+              circleStyle={circleStyle}
+              percent={percent}
+            />
           );
         })}
       </nav>

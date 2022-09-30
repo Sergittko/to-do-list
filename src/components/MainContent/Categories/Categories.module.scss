@@ -16,12 +16,7 @@
     content: "";
     z-index: 1;
     background: rgb(67, 64, 132);
-    background: linear-gradient(
-      90deg,
-      rgba(67, 64, 132, 1) 0%,
-      rgba(67, 64, 132, 1) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
+    background: linear-gradient(90deg, rgba(67, 64, 132, 1) 0%, rgba(67, 64, 132, 1) 50%, rgba(255, 255, 255, 0) 100%);
   }
 
   &:after {
@@ -33,18 +28,13 @@
     content: "";
     z-index: 1;
     background: rgb(67, 64, 132);
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(67, 64, 132, 1) 50%,
-      rgba(67, 64, 132, 1) 100%
-    );
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(67, 64, 132, 1) 50%, rgba(67, 64, 132, 1) 100%);
   }
 
   h2 {
     font-size: 26px;
     text-align: center;
-    margin: 0 0 30px;
+    margin: 0 0 20px;
   }
 
   nav {
@@ -53,89 +43,7 @@
     align-items: center;
     overflow-x: scroll;
     position: relative;
-    padding: 0 0 10px;
-
-    .category_wrapper {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-direction: column;
-      overflow-y: clip;
-      cursor: pointer;
-      width: 160px;
-      height: 184px;
-      margin: 0 20px;
-      text-align: center;
-      font-size: 18px;
-      padding: 10px;
-      border-radius: 20px;
-      background: rgb(50, 88, 150);
-      background: linear-gradient(
-        162deg,
-        rgba(50, 88, 150, 1) 0%,
-        rgba(40, 48, 106, 1) 100%
-      );
-
-      img {
-        position: absolute;
-        z-index: 0;
-        opacity: 0.3;
-        width: -webkit-fill-available;
-        top: -19px;
-        bottom: 0;
-        left: 0;
-        filter: blur(1px);
-      }
-
-      & > span {
-        margin: auto;
-        z-index: 2;
-      }
-
-      &:nth-child(even) {
-        background: rgb(97, 63, 122);
-        background: linear-gradient(
-          194deg,
-          rgba(97, 63, 122, 1) 0%,
-          rgba(139, 42, 95, 1) 100%
-        );
-
-        img {
-          filter: blur(1px) hue-rotate(117deg);
-          transform: rotate(180deg);
-        }
-      }
-
-      .progress_wrapper {
-        position: relative;
-
-        span {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          font-size: 16px;
-        }
-
-        .progress_ring__circle {
-          transform-origin: center;
-          transition: stroke-dashoffset 0.3s;
-          transform: scale(-1, 1) rotate(270deg);
-          position: relative;
-          // &:after {
-          //   position: absolute;
-          //   top: 0;
-          //   right: 0;
-          //   width: 20px;
-          //   height: 20px;
-          //   content: "";
-          //   z-index: 1;
-          //   background: #fff;
-          // }
-        }
-      }
-    }
+    padding: 10px 0px;
   }
 }
 

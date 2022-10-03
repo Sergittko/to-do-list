@@ -1,5 +1,4 @@
 import style from "./Categories.module.scss";
-import preset from "../../../assets/preset.png";
 import Card from "./Card/Card";
 
 const Categories = () => {
@@ -52,8 +51,8 @@ const Categories = () => {
 
   let countProgress = (allTasks) => {
     let isDone = 0;
-    allTasks.map((el) => {
-      if (el.isDone) ++isDone;
+    allTasks.forEach((item, i) => {
+      if (item.isDone) ++isDone;
     });
 
     let percent = Math.floor((isDone * 100) / allTasks.length);

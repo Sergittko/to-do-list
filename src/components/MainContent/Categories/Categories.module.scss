@@ -16,7 +16,12 @@
     content: "";
     z-index: 1;
     background: rgb(67, 64, 132);
-    background: linear-gradient(90deg, rgba(67, 64, 132, 1) 0%, rgba(67, 64, 132, 1) 50%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(
+      90deg,
+      rgba(67, 64, 132, 1) 0%,
+      rgba(67, 64, 132, 1) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
   }
 
   &:after {
@@ -28,7 +33,12 @@
     content: "";
     z-index: 1;
     background: rgb(67, 64, 132);
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(67, 64, 132, 1) 50%, rgba(67, 64, 132, 1) 100%);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(67, 64, 132, 1) 50%,
+      rgba(67, 64, 132, 1) 100%
+    );
   }
 
   h2 {

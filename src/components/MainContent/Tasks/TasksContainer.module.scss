@@ -1,14 +1,15 @@
 .section_container {
   width: 100%;
-  background-color: #434084;
+  background-color: #222435;
   border-radius: 10px;
   margin: 10px 0;
   padding: 10px;
+  border: 2px solid #262a3f;
 
   h2 {
     font-size: 26px;
     text-align: center;
-    margin: 0 0 20px;
+    margin: 10px 0 20px;
   }
 
   .task {
@@ -17,7 +18,8 @@
     background-color: rgba(0, 0, 0, 0.1);
     padding: 5px 10px;
     border-radius: 10px;
-    margin: 10px 0;
+    margin: 10px 0 0 0;
+    border: 2px solid #262a3f;
 
     .text_block {
       display: flex;
@@ -29,11 +31,12 @@
 
       span {
         display: block;
-        width: 15px;
-        height: 15px;
+        width: 17px;
+        height: 17px;
         margin: auto 0;
-        border-radius: 50%;
-        background-color: #fff;
+        border-radius: 4px;
+        border: 2px solid #b5b8c1;
+        cursor: pointer;
       }
     }
 
@@ -42,11 +45,16 @@
       flex-direction: column;
 
       span {
-        background-color: #69728d;
         border-radius: 4px;
         padding: 2px 5px;
         margin: 2px 0;
         text-align: center;
+        color: #a2693a;
+        background-color: #392d31;
+      }
+      span:nth-child(2) {
+        color: #4866bf;
+        background-color: #242b48;
       }
     }
   }

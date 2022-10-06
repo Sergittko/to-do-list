@@ -20,6 +20,7 @@
     rgba(40, 48, 106, 1) 100%
   );
   transition: 0.2s ease;
+  border: 2px solid #262a3f;
 
   img {
     position: absolute;
@@ -51,12 +52,7 @@
     }
   }
 
-  &:nth-child(even):hover {
-    transform: translate(0px, -6px);
-    filter: drop-shadow(0px 5px 3px #3b2222);
-  }
-
-  &:nth-child(odd):hover {
+  &:hover {
     transform: translate(0px, -6px);
     filter: drop-shadow(0px 5px 3px #24223b);
   }

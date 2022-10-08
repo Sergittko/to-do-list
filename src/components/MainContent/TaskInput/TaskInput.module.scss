@@ -6,6 +6,7 @@
   margin: auto;
   max-width: 980px;
   width: fit-content;
+  height: 45px;
   display: flex;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.3);
@@ -14,7 +15,6 @@
   z-index: 99999;
   transition: 2s ease-in;
 
-  button,
   input,
   select {
     color: #ececec;
@@ -31,16 +31,19 @@
     }
   }
 
-  button {
+  input[type="submit"] {
+    width: fit-content;
+    color: #636374;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 30px 50px 50px 30px;
     padding: 5px;
   }
 
-  input {
+  input[type="text"] {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50px 30px 30px 50px;
     padding: 5px 10px;
+    min-width: 300px;
     width: 100%;
 
     &::placeholder {
@@ -49,6 +52,17 @@
   }
 }
 
-.input_container:focus-within{
-  width: 100%;
+.input_container:focus-within {
+  width: 80%;
+  animation-duration: 1s;
+  animation-name: stretchOut;
+}
+@keyframes stretchOut {
+  from {
+    width: 40%;
+  }
+
+  to {
+    width: 100%;
+  }
 }

@@ -7,31 +7,31 @@ const TasksContainer = ({ chosenCategory }) => {
         title: "Make todo",
         isDone: true,
         creared: "30.09.22",
-        category: 'Work'
+        category: "Work",
       },
       {
         title: "1",
         isDone: false,
         creared: "1.10.22",
-        category: 'Work'
+        category: "Work",
       },
       {
         title: "1sdfsdf2",
         isDone: true,
         creared: "30.09.22",
-        category: 'Work'
+        category: "Work",
       },
       {
         title: "12psodkf3",
         isDone: true,
         creared: "02.10.22",
-        category: 'Work'
+        category: "Work",
       },
       {
         title: "12sdiu iuh iuh34",
         isDone: true,
         creared: "04.10.22",
-        category: 'Work'
+        category: "Work",
       },
     ],
     NoSection: [
@@ -39,19 +39,19 @@ const TasksContainer = ({ chosenCategory }) => {
         title: "12",
         isDone: false,
         creared: "today",
-        category: 'No section'
+        category: "No section",
       },
       {
         title: "123",
         isDone: true,
         creared: "yesterday",
-        category: 'No section'
+        category: "No section",
       },
       {
         title: "1234",
         isDone: true,
         creared: "30.09.22",
-        category: 'No section'
+        category: "No section",
       },
     ],
   };
@@ -79,8 +79,8 @@ const TasksContainer = ({ chosenCategory }) => {
 
   return (
     <section className={style.section_container}>
-      <h2>Tasks</h2>
-      {chosenCategory === "all"
+      <h2>{chosenCategory}</h2>
+      {chosenCategory === "All tasks"
         ? mergeArrays(tasksData).map((item) => {
             return (
               <div

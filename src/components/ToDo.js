@@ -9,7 +9,7 @@ import { getUserName } from "../api/toDoApi";
 
 const ToDo = () => {
   let [name, nameChanged] = useState(getUserName());
-  let [chosenCategory, changeCategory] = useState("all");
+  let [chosenCategory, changeCategory] = useState("All tasks");
   return (
     <div>
       {name === null ? (

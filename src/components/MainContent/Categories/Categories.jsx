@@ -75,6 +75,20 @@ const Categories = (props) => {
     <section className={style.section_container}>
       <h2>Categories</h2>
       <nav>
+        {[allValues].map(() => {
+          let { radius, circleStyle, percent } = countProgress(allValues);
+          return (
+            <Card
+              key="all"
+              name="All tasks"
+              radius={radius}
+              circleStyle={circleStyle}
+              percent={percent}
+              changeCategory={() => props.changeCategory("All tasks")}
+            />
+          );
+        })}
+
         {keys.map((el, index) => {
           let { radius, circleStyle, percent } = countProgress(values[index]);
           return (
@@ -85,20 +99,6 @@ const Categories = (props) => {
               circleStyle={circleStyle}
               percent={percent}
               changeCategory={() => props.changeCategory(el)}
-            />
-          );
-        })}
-
-        {[allValues].map(() => {
-          let { radius, circleStyle, percent } = countProgress(allValues);
-          return (
-            <Card
-              key="all"
-              name="All tasks"
-              radius={radius}
-              circleStyle={circleStyle}
-              percent={percent}
-              changeCategory={() => props.changeCategory("all")}
             />
           );
         })}

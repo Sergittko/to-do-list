@@ -70,3 +70,17 @@
     width: 100%;
   }
 }
+@media only screen and (max-width: 754px) {
+  .input_container {
+    width: calc(100% - 50px);
+
+    input[type="text"] {
+      min-width: 80px;
+    }
+
+  &:focus-within {
+    width: calc(100% - 50px);
+    animation-name: none;
+  }
+}
+}

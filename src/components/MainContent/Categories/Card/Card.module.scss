@@ -35,7 +35,7 @@
 
   & > span {
     margin: auto;
-    z-index: 2;
+    z-index: 0;
   }
 
   &:nth-child(even) {
@@ -79,5 +79,13 @@
       transform: scale(-1, 1) rotate(270deg);
       position: relative;
     }
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .category_wrapper {
+    width: 150px;
+    height: 150px;
+    margin: 0 5px;
   }
 }

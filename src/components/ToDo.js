@@ -9,6 +9,7 @@ import { getUserName } from "../api/toDoApi";
 
 const ToDo = () => {
   let [name, nameChanged] = useState(getUserName());
+  let [chosenCategory, changeCategory] = useState("all");
   return (
     <div>
       {name === null ? (
@@ -17,8 +18,8 @@ const ToDo = () => {
         <div className={style.app}>
           <Header name={name} />
           <div className={style.main_content}>
-            <Categories />
-            <TasksContainer />
+            <Categories changeCategory={changeCategory} />
+            <TasksContainer chosenCategory={chosenCategory} />
             <TaskInput />
           </div>
         </div>

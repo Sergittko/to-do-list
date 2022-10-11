@@ -1,7 +1,7 @@
 import style from "./Categories.module.scss";
 import Card from "./Card/Card";
 
-const Categories = () => {
+const Categories = (props) => {
   const tasksData = {
     Work: [
       {
@@ -84,6 +84,7 @@ const Categories = () => {
               radius={radius}
               circleStyle={circleStyle}
               percent={percent}
+              changeCategory={() => props.changeCategory(el)}
             />
           );
         })}
@@ -97,6 +98,7 @@ const Categories = () => {
               radius={radius}
               circleStyle={circleStyle}
               percent={percent}
+              changeCategory={() => props.changeCategory("all")}
             />
           );
         })}

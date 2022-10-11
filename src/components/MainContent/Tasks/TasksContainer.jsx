@@ -1,6 +1,6 @@
 import style from "./TasksContainer.module.scss";
 
-const TasksContainer = () => {
+const TasksContainer = ({ chosenCategory }) => {
   const tasksData = {
     Work: [
       {
@@ -14,17 +14,17 @@ const TasksContainer = () => {
         creared: "30.09.22",
       },
       {
-        title: "12",
+        title: "1sdfsdf2",
         isDone: true,
         creared: "30.09.22",
       },
       {
-        title: "123",
+        title: "12psodkf3",
         isDone: true,
         creared: "30.09.22",
       },
       {
-        title: "1234",
+        title: "12sdiu iuh iuh34",
         isDone: true,
         creared: "30.09.22",
       },
@@ -48,6 +48,15 @@ const TasksContainer = () => {
     ],
   };
 
+  function mergeArrays(data) {
+    let keys = Object.keys(data);
+    let mergedArrays = [];
+    keys.forEach((item) => {
+      mergedArrays = [...mergedArrays, ...data[item]];
+    });
+    return mergedArrays;
+  }
+
   let checkBoxStyle = {
     backgroundColor: "#31d255",
     border: "2px solid #38a150",
@@ -63,45 +72,45 @@ const TasksContainer = () => {
   return (
     <section className={style.section_container}>
       <h2>Tasks</h2>
-      {tasksData.Work.map((item) => {
-        return (
-          <div
-            className={style.task}
-            key={item.title}
-            className={style.task}
-            style={item.isDone ? doneTaskStyle : null}
-          >
-            <div className={style.text_block}>
-              <span style={item.isDone ? checkBoxStyle : null}></span>
-              <p>{item.title}</p>
-            </div>
-            <div className={style.info_block}>
-              <span>{item.creared}</span>
-              <span>Work</span>
-            </div>
-          </div>
-        );
-      })}
-      <div className={style.task}>
-        <div className={style.text_block}>
-          <span></span>
-          <p>Deploy Memory game</p>
-        </div>
-        <div className={style.info_block}>
-          <span>today</span>
-          <span>Work</span>
-        </div>
-      </div>
-      <div className={style.task}>
-        <div className={style.text_block}>
-          <span></span>
-          <p>Do house work</p>
-        </div>
-        <div className={style.info_block}>
-          <span>29.09.22</span>
-          <span>No Section</span>
-        </div>
-      </div>
+      {chosenCategory === "all"
+        ? mergeArrays(tasksData).map((item) => {
+            return (
+              <div
+                className={style.task}
+                key={item.title}
+                className={style.task}
+                style={item.isDone ? doneTaskStyle : null}
+              >
+                <div className={style.text_block}>
+                  <span style={item.isDone ? checkBoxStyle : null}></span>
+                  <p>{item.title}</p>
+                </div>
+                <div className={style.info_block}>
+                  <span>{item.creared}</span>
+                  <span>Work</span>
+                </div>
+              </div>
+            );
+          })
+        : tasksData[chosenCategory].map((item) => {
+            return (
+              <div
+                className={style.task}
+                key={item.title}
+                className={style.task}
+                style={item.isDone ? doneTaskStyle : null}
+              >
+                <div className={style.text_block}>
+                  <span style={item.isDone ? checkBoxStyle : null}></span>
+                  <p>{item.title}</p>
+                </div>
+                <div className={style.info_block}>
+                  <span>{item.creared}</span>
+                  <span>Work</span>
+                </div>
+              </div>
+            );
+          })}
     </section>
   );
 };

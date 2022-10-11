@@ -1,9 +1,9 @@
 import style from "./Card.module.scss";
 import preset from "../../../../assets/preset.png";
 
-const Card = ({ name, radius, circleStyle, percent }) => {
+const Card = ({ name, radius, circleStyle, percent, changeCategory }) => {
   return (
-    <div className={style.category_wrapper}>
+    <div className={style.category_wrapper} onClick={() => changeCategory()}>
       <img src={preset} alt="" />
       <span>{name}</span>
       <div className={style.progress_wrapper}>

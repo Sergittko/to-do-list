@@ -2,7 +2,7 @@ import style from "./Header.module.scss";
 import defaultImage from "../../assets/defaultUser.png";
 import toDo from "../../assets/toDo-Icon.png";
 
-const Header = () => {
+const Header = (props) => {
   const weekday = [
     "Sunday",
     "Monday",
@@ -21,7 +21,7 @@ const Header = () => {
       <div className={style.hedaer_content}>
         <img src={toDo} alt="toDo-logo" />
         <div className={style.date}>
-          <p>Hi,Sergio</p>
+          <p>Hi,{props.name}</p>
           <time>
             {day}, {date}
           </time>

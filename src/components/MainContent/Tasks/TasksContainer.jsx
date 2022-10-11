@@ -7,43 +7,51 @@ const TasksContainer = ({ chosenCategory }) => {
         title: "Make todo",
         isDone: true,
         creared: "30.09.22",
+        category: 'Work'
       },
       {
         title: "1",
         isDone: false,
-        creared: "30.09.22",
+        creared: "1.10.22",
+        category: 'Work'
       },
       {
         title: "1sdfsdf2",
         isDone: true,
         creared: "30.09.22",
+        category: 'Work'
       },
       {
         title: "12psodkf3",
         isDone: true,
-        creared: "30.09.22",
+        creared: "02.10.22",
+        category: 'Work'
       },
       {
         title: "12sdiu iuh iuh34",
         isDone: true,
-        creared: "30.09.22",
+        creared: "04.10.22",
+        category: 'Work'
       },
     ],
     NoSection: [
       {
         title: "12",
         isDone: false,
-        creared: "30.09.22",
+        creared: "today",
+        category: 'No section'
       },
       {
         title: "123",
         isDone: true,
-        creared: "30.09.22",
+        creared: "yesterday",
+        category: 'No section'
       },
       {
         title: "1234",
         isDone: true,
         creared: "30.09.22",
+        category: 'No section'
       },
     ],
   };
@@ -87,7 +95,7 @@ const TasksContainer = ({ chosenCategory }) => {
                 </div>
                 <div className={style.info_block}>
                   <span>{item.creared}</span>
-                  <span>Work</span>
+                  <span>{item.category}</span>
                 </div>
               </div>
             );
@@ -106,7 +114,7 @@ const TasksContainer = ({ chosenCategory }) => {
                 </div>
                 <div className={style.info_block}>
                   <span>{item.creared}</span>
-                  <span>Work</span>
+                  <span>{item.category}</span>
                 </div>
               </div>
             );

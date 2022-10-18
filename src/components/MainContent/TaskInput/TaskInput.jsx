@@ -1,13 +1,16 @@
 import style from "./TaskInput.module.scss";
 import { useState } from "react";
+import { setNewTask } from "../../../api/toDoApi";
+
 const TaskInput = () => {
-  let [selectState, changeSelect] = useState("No Section");
+  let [selectState, changeSelect] = useState("NoSection");
   let [textState, changeText] = useState("");
 
   let handleSubmit = (event) => {
-    console.log(event.target[0].value);
-    console.log(event.target[1].value);
-    changeSelect("No Section");
+    let title = event.target[0].value;
+    let category = event.target[1].value;
+    setNewTask(title, category);
+    changeSelect("NoSection");
     changeText("");
     event.preventDefault();
   };
@@ -25,7 +28,7 @@ const TaskInput = () => {
         onChange={(e) => changeSelect(e.target.value)}
       >
         <option value="Work">Work</option>
-        <option value="No Section">No Section</option>
+        <option value="NoSection">No Section</option>
       </select>
       <input type="submit" value="Submit" />
     </form>

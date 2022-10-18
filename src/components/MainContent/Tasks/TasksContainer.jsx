@@ -80,45 +80,49 @@ const TasksContainer = ({ chosenCategory }) => {
   return (
     <section className={style.section_container}>
       <h2>{chosenCategory}</h2>
-      {chosenCategory === "All tasks"
-        ? mergeArrays(tasksData).map((item) => {
-            return (
-              <div
-                className={style.task}
-                key={item.title}
-                className={style.task}
-                style={item.isDone ? doneTaskStyle : null}
-              >
-                <div className={style.text_block}>
-                  <span style={item.isDone ? checkBoxStyle : null}></span>
-                  <p>{item.title}</p>
-                </div>
-                <div className={style.info_block}>
-                  <span>{item.creared}</span>
-                  <span>{item.category}</span>
-                </div>
+      {!tasksData ? (
+        <h3>No tasks added</h3>
+      ) : chosenCategory === "All tasks" ? (
+        mergeArrays(tasksData).map((item) => {
+          return (
+            <div
+              className={style.task}
+              key={item.title}
+              className={style.task}
+              style={item.isDone ? doneTaskStyle : null}
+            >
+              <div className={style.text_block}>
+                <span style={item.isDone ? checkBoxStyle : null}></span>
+                <p>{item.title}</p>
               </div>
-            );
-          })
-        : tasksData[chosenCategory].map((item) => {
-            return (
-              <div
-                className={style.task}
-                key={item.title}
-                className={style.task}
-                style={item.isDone ? doneTaskStyle : null}
-              >
-                <div className={style.text_block}>
-                  <span style={item.isDone ? checkBoxStyle : null}></span>
-                  <p>{item.title}</p>
-                </div>
-                <div className={style.info_block}>
-                  <span>{item.creared}</span>
-                  <span>{item.category}</span>
-                </div>
+              <div className={style.info_block}>
+                <span>{item.creared}</span>
+                <span>{item.category}</span>
               </div>
-            );
-          })}
+            </div>
+          );
+        })
+      ) : (
+        tasksData[chosenCategory].map((item) => {
+          return (
+            <div
+              className={style.task}
+              key={item.title}
+              className={style.task}
+              style={item.isDone ? doneTaskStyle : null}
+            >
+              <div className={style.text_block}>
+                <span style={item.isDone ? checkBoxStyle : null}></span>
+                <p>{item.title}</p>
+              </div>
+              <div className={style.info_block}>
+                <span>{item.creared}</span>
+                <span>{item.category}</span>
+              </div>
+            </div>
+          );
+        })
+      )}
     </section>
   );
 };

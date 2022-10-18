@@ -12,13 +12,19 @@
     margin: 10px 0 20px;
   }
 
+  h3 {
+    font-size: 18px;
+    text-align: center;
+    margin: 50px;
+  }
+
   .task {
     display: flex;
     justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.1);
     padding: 5px 10px;
     border-radius: 10px;
-    margin: 10px 0 0 0;
+    margin: 10px 0 0;
     border: 2px solid #262a3f;
 
     .text_block {
@@ -53,6 +59,7 @@
         color: #a2693a;
         background-color: #392d31;
       }
+
       span:nth-child(2) {
         color: #4866bf;
         background-color: #242b48;

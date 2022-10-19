@@ -5,10 +5,11 @@ import Categories from "./MainContent/Categories/Categories";
 import TasksContainer from "./MainContent/Tasks/TasksContainer";
 import TaskInput from "./MainContent/TaskInput/TaskInput";
 import LoginWindow from "./LoginWindow/LoginWindow";
-import { getUserName } from "../api/toDoApi";
+import { getUserName, getTasks } from "../api/toDoApi";
 
 const ToDo = () => {
   let [name, nameChanged] = useState(getUserName());
+  let [tasks, tasksChanged] = useState(getTasks());
   let [chosenCategory, changeCategory] = useState("All tasks");
   return (
     <div>
@@ -18,7 +19,11 @@ const ToDo = () => {
         <div className={style.app}>
           <Header name={name} />
           <div className={style.main_content}>
-            <Categories changeCategory={changeCategory} />
+            <Categories
+              changeCategory={changeCategory}
+              tasksData={tasks}
+              tasksChanged={tasksChanged}
+            />
             <TasksContainer chosenCategory={chosenCategory} />
             <TaskInput />
           </div>

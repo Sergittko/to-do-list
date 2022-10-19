@@ -1,7 +1,6 @@
 import style from "./AddCategoryCard.module.scss";
 import { useState } from "react";
-import { setNewCategory } from "../../../../api/toDoApi";
-
+import { setNewCategory, getTasks } from "../../../../api/toDoApi";
 
 const AddCategoryCard = (props) => {
   let [name, setName] = useState("");
@@ -11,6 +10,7 @@ const AddCategoryCard = (props) => {
     if (name.length > 1) {
       setNewCategory(name.charAt(0).toUpperCase() + name.slice(1));
       props.setCategoryMode(false);
+      props.tasksChanged(getTasks());
       setName("");
     }
     if (name.length === 0) {

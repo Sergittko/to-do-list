@@ -55,6 +55,28 @@
     overflow-x: scroll;
     position: relative;
     padding: 10px 0;
+
+    .add_cathegory_container {
+      width: 100px;
+      height: 100px;
+      border: solid 2px #38a150;
+      background-color: #31d255;
+      color: #1f2030;
+      border-radius: 20%;
+      text-align: center;
+      align-items: center;
+      display: flex;
+      cursor: pointer;
+      transition: 0.2s;
+      font-size: 16px;
+
+      &:hover {
+        transform: scale(1.03);
+      }
+      &:active {
+        transform: scale(0.97);
+      }
+    }
   }
 }
 
@@ -81,7 +103,6 @@
     border-radius: 10px;
   }
 }
-
 @media only screen and (max-width: 420px) {
   .section_container {
     margin: 10px auto 0;
@@ -89,7 +110,7 @@
 
     h2 {
       font-size: 24px;
-      margin: 0px 0 5px;
+      margin: 0 0 5px;
     }
 
     nav {

@@ -71,7 +71,7 @@ export const getUserName = () => {
   let name = JSON.parse(localStorage.getItem("userName"));
   if (!name) {
     localStorage.setItem("userName", JSON.stringify(null));
-    localStorage.setItem("tasks", JSON.stringify([]));
+    localStorage.setItem("tasks", JSON.stringify({ NoSection: [] }));
   }
   return JSON.parse(localStorage.getItem("userName"));
 };
@@ -98,6 +98,15 @@ export const setNewTask = (title, category) => {
   let newState = {
     ...taskState,
     [category]: [newTask, ...taskState[category]],
+  };
+  localStorage.setItem("tasks", JSON.stringify(newState));
+};
+
+export const setNewCategory = (categoryName) => {
+  let taskState = getTasks();
+  let newState = {
+    ...taskState,
+    [categoryName]: [],
   };
   localStorage.setItem("tasks", JSON.stringify(newState));
 };

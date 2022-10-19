@@ -1,7 +1,11 @@
 import style from "./Categories.module.scss";
+import AddCategoryCard from "./AddCategoryCard/AddCategoryCard";
 import Card from "./Card/Card";
+import { useState } from "react";
 
 const Categories = (props) => {
+  let [categoryMode, setCategoryMode] = useState(false);
+
   const tasksData = {
     Work: [
       {
@@ -102,7 +106,17 @@ const Categories = (props) => {
             />
           );
         })}
+
+        <div
+          className={style.add_cathegory_container}
+          onClick={() => setCategoryMode(!categoryMode)}
+        >
+          <p>Add new category</p>
+        </div>
       </nav>
+      {categoryMode ? (
+        <AddCategoryCard setCategoryMode={setCategoryMode} />
+      ) : null}
     </section>
   );
 };

@@ -1,11 +1,10 @@
 import style from "./TaskInput.module.scss";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { setNewTask } from "../../../api/toDoApi";
 
-const TaskInput = () => {
+const TaskInput = ({ tasksData }) => {
   let [selectState, changeSelect] = useState("NoSection");
   let [textState, changeText] = useState("");
-
   let handleSubmit = (event) => {
     let title = event.target[0].value;
     let category = event.target[1].value;
@@ -14,6 +13,8 @@ const TaskInput = () => {
     changeText("");
     event.preventDefault();
   };
+  const keys = Object.keys(tasksData);
+
   return (
     <form className={style.input_container} onSubmit={handleSubmit}>
       <input
@@ -27,8 +28,13 @@ const TaskInput = () => {
         value={selectState}
         onChange={(e) => changeSelect(e.target.value)}
       >
-        <option value="Work">Work</option>
-        <option value="NoSection">No Section</option>
+        {keys.map((item) => {
+          return (
+            <option key={item} value={item}>
+              {item}
+            </option>
+          );
+        })}
       </select>
       <input type="submit" value="Submit" />
     </form>

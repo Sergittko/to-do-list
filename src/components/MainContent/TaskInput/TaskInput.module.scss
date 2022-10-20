@@ -59,17 +59,17 @@
 .input_container:focus-within {
   width: 80%;
   animation-duration: 1s;
-  animation-name: stretchOut;
+  // animation-name: stretchOut;
 }
-@keyframes stretchOut {
-  from {
-    width: 40%;
-  }
-
-  to {
-    width: 100%;
-  }
-}
+// @keyframes stretchOut {
+//   from {
+//     width: 40%;
+//   }
+//
+//   to {
+//     width: 100%;
+//   }
+// }
 
 @media only screen and (max-width: 754px) {
   .input_container {

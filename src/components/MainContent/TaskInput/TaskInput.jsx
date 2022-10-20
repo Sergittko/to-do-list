@@ -8,10 +8,12 @@ const TaskInput = ({ tasksData, tasksChanged }) => {
   let handleSubmit = (event) => {
     let title = event.target[0].value;
     let category = event.target[1].value;
-    setNewTask(title, category);
-    tasksChanged(getTasks());
-    changeSelect("NoSection");
-    changeText("");
+    if (title.length > 1) {
+      setNewTask(title, category);
+      tasksChanged(getTasks());
+      changeSelect("No section");
+      changeText("");
+    }
     event.preventDefault();
   };
   const keys = Object.keys(tasksData);
@@ -21,6 +23,7 @@ const TaskInput = ({ tasksData, tasksChanged }) => {
       <input
         type="text"
         placeholder="Type task"
+        autoFocus
         value={textState}
         onChange={(e) => changeText(e.target.value)}
       />

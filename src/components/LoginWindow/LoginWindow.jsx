@@ -24,6 +24,7 @@ const LoginWindow = (props) => {
           placeholder="Type task"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          autoFocus
         />
         <input type="submit" value="Submit" />
       </form>

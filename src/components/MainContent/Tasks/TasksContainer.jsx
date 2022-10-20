@@ -1,61 +1,6 @@
 import style from "./TasksContainer.module.scss";
 
-const TasksContainer = ({ chosenCategory }) => {
-  const tasksData = {
-    Work: [
-      {
-        title: "Make todo",
-        isDone: true,
-        creared: "30.09.22",
-        category: "Work",
-      },
-      {
-        title: "1",
-        isDone: false,
-        creared: "1.10.22",
-        category: "Work",
-      },
-      {
-        title: "1sdfsdf2",
-        isDone: true,
-        creared: "30.09.22",
-        category: "Work",
-      },
-      {
-        title: "12psodkf3",
-        isDone: true,
-        creared: "02.10.22",
-        category: "Work",
-      },
-      {
-        title: "12sdiu iuh iuh34",
-        isDone: true,
-        creared: "04.10.22",
-        category: "Work",
-      },
-    ],
-    NoSection: [
-      {
-        title: "12",
-        isDone: false,
-        creared: "today",
-        category: "No section",
-      },
-      {
-        title: "123",
-        isDone: true,
-        creared: "yesterday",
-        category: "No section",
-      },
-      {
-        title: "1234",
-        isDone: true,
-        creared: "30.09.22",
-        category: "No section",
-      },
-    ],
-  };
-
+const TasksContainer = ({ chosenCategory, tasksData }) => {
   function mergeArrays(data) {
     let keys = Object.keys(data);
     let mergedArrays = [];
@@ -64,7 +9,6 @@ const TasksContainer = ({ chosenCategory }) => {
     });
     return mergedArrays;
   }
-
   let checkBoxStyle = {
     backgroundColor: "#31d255",
     border: "2px solid #38a150",
@@ -80,14 +24,14 @@ const TasksContainer = ({ chosenCategory }) => {
   return (
     <section className={style.section_container}>
       <h2>{chosenCategory}</h2>
-      {!tasksData ? (
+      {mergeArrays(tasksData).length === 0 ? (
         <h3>No tasks added</h3>
       ) : chosenCategory === "All tasks" ? (
-        mergeArrays(tasksData).map((item) => {
+        mergeArrays(tasksData).map((item, index) => {
           return (
             <div
               className={style.task}
-              key={item.title}
+              key={item.title + index}
               className={style.task}
               style={item.isDone ? doneTaskStyle : null}
             >
@@ -102,12 +46,14 @@ const TasksContainer = ({ chosenCategory }) => {
             </div>
           );
         })
+      ) : tasksData[chosenCategory].length === 0 ? (
+        <h3>No tasks added</h3>
       ) : (
-        tasksData[chosenCategory].map((item) => {
+        tasksData[chosenCategory].map((item, index) => {
           return (
             <div
               className={style.task}
-              key={item.title}
+              key={item.title + index}
               className={style.task}
               style={item.isDone ? doneTaskStyle : null}
             >

@@ -71,7 +71,7 @@ export const getUserName = () => {
   let name = JSON.parse(localStorage.getItem("userName"));
   if (!name) {
     localStorage.setItem("userName", JSON.stringify(null));
-    localStorage.setItem("tasks", JSON.stringify({ NoSection: [] }));
+    localStorage.setItem("tasks", JSON.stringify({ 'No section': [] }));
   }
   return JSON.parse(localStorage.getItem("userName"));
 };

@@ -11,7 +11,7 @@ const TaskInput = ({ tasksData, tasksChanged }) => {
     if (title.length > 1) {
       setNewTask(title, category);
       tasksChanged(getTasks());
-      changeSelect("No section");
+      // changeSelect("No section");
       changeText("");
     }
     event.preventDefault();

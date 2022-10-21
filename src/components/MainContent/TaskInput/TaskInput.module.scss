@@ -5,7 +5,8 @@
   right: 0;
   margin: auto;
   max-width: 950px;
-  width: fit-content;
+  // width: fit-content;
+  width: calc(100% - 50px);
   height: 45px;
   display: flex;
   justify-content: center;
@@ -57,7 +58,8 @@
 }
 
 .input_container:focus-within {
-  width: 80%;
+  // width: 80%;
+  width: calc(100% - 50px);
   animation-duration: 1s;
   // animation-name: stretchOut;
 }
@@ -80,7 +82,6 @@
     }
 
     &:focus-within {
-      width: calc(100% - 50px);
       animation-name: none;
     }
   }

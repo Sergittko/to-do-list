@@ -1,18 +1,25 @@
 import style from "./UserMenu.module.scss";
 import { useState } from "react";
-import { setNewCategory, getTasks, getName } from "../../../api/toDoApi";
+import { getTasks, getName, setName } from "../../../api/toDoApi";
 
 const UserMenu = (props) => {
-  let [name, setName] = useState(getName());
+  let userName = getName();
+  let [name, setNameInput] = useState(userName);
 
   let handleSubmit = (event) => {
+    let file = event.target[0].value;
     let name = event.target[1].value;
-    console.log(name);
-    if (name.length > 1) {
-      // setNewCategory(name.charAt(0).toUpperCase() + name.slice(1));
+
+    if(!!file){
+      console.log('file added');
+      // props.menuMode(false);
+    }
+
+    if (name.length > 1 && userName !== name) {
+      setName(name.charAt(0).toUpperCase() + name.slice(1));
       props.menuMode(false);
-      // props.tasksChanged(getTasks());
-      // setName("");
+      props.newName(getName());
+      setNameInput("");
     }
     if (name.length === 0) {
       props.menuMode(false);
@@ -38,7 +45,7 @@ const UserMenu = (props) => {
             placeholder="Type new name"
             autoFocus
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setNameInput(e.target.value)}
           />
           <input type="submit" value="Submit" />
         </form>

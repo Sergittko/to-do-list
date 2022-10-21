@@ -1,11 +1,13 @@
 import style from "./Header.module.scss";
+import { useState } from "react";
 import defaultImage from "../../assets/defaultUser.png";
 import toDo from "../../assets/toDo-Icon.png";
 import UserMenu from "./UserMenu/UserMenu";
-import { useState } from "react";
+import { getName } from "../../api/toDoApi";
 
 const Header = (props) => {
   let [menu, menuMode] = useState(false);
+  let [name, newName] = useState(getName());
   const weekday = [
     "Sunday",
     "Monday",
@@ -24,13 +26,13 @@ const Header = (props) => {
       <div className={style.hedaer_content}>
         <img src={toDo} alt="toDo-logo" />
         <div className={style.date}>
-          <p>Hi,{props.name}</p>
+          <p>Hi,{name}</p>
           <time>
             {day}, {date}
           </time>
         </div>
         <img src={defaultImage} alt="" onClick={() => menuMode(true)} />
-        {menu ? <UserMenu menuMode={menuMode} /> : null}
+        {menu ? <UserMenu menuMode={menuMode} newName={newName}/> : null}
       </div>
     </div>
   );

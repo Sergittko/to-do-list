@@ -6,10 +6,15 @@ export const getName = () => {
   return JSON.parse(localStorage.getItem("userName"));
 };
 
+export const getUserImage = () => {
+  return JSON.parse(localStorage.getItem("userImage"));
+};
+
 export const getUserName = () => {
   let name = JSON.parse(localStorage.getItem("userName"));
   if (!name) {
     localStorage.setItem("userName", JSON.stringify(null));
+    localStorage.setItem("userImage", JSON.stringify(null));
     localStorage.setItem(
       "tasks",
       JSON.stringify({
@@ -22,6 +27,9 @@ export const getUserName = () => {
 
 export const setName = (name) =>
   localStorage.setItem("userName", JSON.stringify(name));
+
+export const setUserImage = (img) =>
+  localStorage.setItem("userImage", JSON.stringify(img));
 
 export const setNewTask = (title, category) => {
   const today = new Date();

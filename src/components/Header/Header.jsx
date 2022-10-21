@@ -1,8 +1,11 @@
 import style from "./Header.module.scss";
 import defaultImage from "../../assets/defaultUser.png";
 import toDo from "../../assets/toDo-Icon.png";
+import UserMenu from "./UserMenu/UserMenu";
+import { useState } from "react";
 
 const Header = (props) => {
+  let [menu, menuMode] = useState(false);
   const weekday = [
     "Sunday",
     "Monday",
@@ -26,7 +29,8 @@ const Header = (props) => {
             {day}, {date}
           </time>
         </div>
-        <img src={defaultImage} alt="" />
+        <img src={defaultImage} alt="" onClick={()=>menuMode(true)}/>
+        {menu?<UserMenu/>:null}
       </div>
     </div>
   );

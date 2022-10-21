@@ -2,13 +2,20 @@ export const getTasks = () => {
   return JSON.parse(localStorage.getItem("tasks"));
 };
 
+export const getName = () => {
+  return JSON.parse(localStorage.getItem("userName"));
+};
+
 export const getUserName = () => {
   let name = JSON.parse(localStorage.getItem("userName"));
   if (!name) {
     localStorage.setItem("userName", JSON.stringify(null));
-    localStorage.setItem("tasks", JSON.stringify({
-      "No section": []
-    }));
+    localStorage.setItem(
+      "tasks",
+      JSON.stringify({
+        "No section": [],
+      })
+    );
   }
   return JSON.parse(localStorage.getItem("userName"));
 };

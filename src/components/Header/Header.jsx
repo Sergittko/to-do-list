@@ -29,8 +29,8 @@ const Header = (props) => {
             {day}, {date}
           </time>
         </div>
-        <img src={defaultImage} alt="" onClick={()=>menuMode(true)}/>
-        {menu?<UserMenu/>:null}
+        <img src={defaultImage} alt="" onClick={() => menuMode(true)} />
+        {menu ? <UserMenu menuMode={menuMode} /> : null}
       </div>
     </div>
   );

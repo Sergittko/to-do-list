@@ -28,8 +28,9 @@ export const getUserName = () => {
 export const setName = (name) =>
   localStorage.setItem("userName", JSON.stringify(name));
 
-export const setUserImage = (img) =>
-  localStorage.setItem("userImage", JSON.stringify(img));
+export const setUserImage = (img) => {
+  console.log(img);
+}
 
 export const setNewTask = (title, category) => {
   const today = new Date();

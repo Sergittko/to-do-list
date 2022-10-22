@@ -1,6 +1,6 @@
 import style from "./UserMenu.module.scss";
 import { useState } from "react";
-import { getTasks, getName, setName } from "../../../api/toDoApi";
+import { getTasks, getName, setName, setUserImage } from "../../../api/toDoApi";
 
 const UserMenu = (props) => {
   let userName = getName();
@@ -11,8 +11,8 @@ const UserMenu = (props) => {
     let name = event.target[1].value;
 
     if(!!file){
-      console.log('file added');
-      // props.menuMode(false);
+      setUserImage(file);
+      props.menuMode(false);
     }
 
     if (name.length > 1 && userName !== name) {

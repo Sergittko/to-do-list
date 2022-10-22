@@ -10,7 +10,7 @@ const UserMenu = (props) => {
     let file = event.target[0].value;
     let name = event.target[1].value;
 
-    if(!!file){
+    if (!!file) {
       setUserImage(file);
       props.menuMode(false);
     }

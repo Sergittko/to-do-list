@@ -32,7 +32,7 @@ const Header = (props) => {
           </time>
         </div>
         <img src={defaultImage} alt="" onClick={() => menuMode(true)} />
-        {menu ? <UserMenu menuMode={menuMode} newName={newName}/> : null}
+        {menu ? <UserMenu menuMode={menuMode} newName={newName} /> : null}
       </div>
     </div>
   );

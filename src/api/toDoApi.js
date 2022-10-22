@@ -30,7 +30,7 @@ export const setName = (name) =>
 
 export const setUserImage = (img) => {
   console.log(img);
-}
+};
 
 export const setNewTask = (title, category) => {
   const today = new Date();
@@ -47,10 +47,23 @@ export const setNewTask = (title, category) => {
     isDone: false,
     creared: date,
     category: category,
+    id: Date.now(),
   };
   let newState = {
     ...taskState,
     [category]: [newTask, ...taskState[category]],
+  };
+  localStorage.setItem("tasks", JSON.stringify(newState));
+};
+
+export const setTaskDone = (category, id) => {
+  let taskState = getTasks();
+  let newState = {
+    ...taskState,
+    [category]: taskState[category].map(item => {
+      if(item.id === id) return {...item, isDone: !item.isDone};
+      return item;
+    }),
   };
   localStorage.setItem("tasks", JSON.stringify(newState));
 };

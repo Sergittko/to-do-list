@@ -22,9 +22,9 @@ const Header = (props) => {
   let date = d.getDate();
 
   useEffect(() => {
-    if (menu) document.body.style.overflow = 'hidden';
-    if (!menu) document.body.style.overflow = 'unset';
-  }, [menu])
+    if (menu) document.body.style.overflow = "hidden";
+    if (!menu) document.body.style.overflow = "unset";
+  }, [menu]);
 
   return (
     <div className={style.hedaer_container}>

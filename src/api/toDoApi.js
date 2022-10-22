@@ -60,9 +60,20 @@ export const setTaskDone = (category, id) => {
   let taskState = getTasks();
   let newState = {
     ...taskState,
-    [category]: taskState[category].map(item => {
-      if(item.id === id) return {...item, isDone: !item.isDone};
+    [category]: taskState[category].map((item) => {
+      if (item.id === id) return { ...item, isDone: !item.isDone };
       return item;
+    }),
+  };
+  localStorage.setItem("tasks", JSON.stringify(newState));
+};
+
+export const deleteTask = (category, id) => {
+  let taskState = getTasks();
+  let newState = {
+    ...taskState,
+    [category]: taskState[category].filter((item) => {
+      return item.id !== id;
     }),
   };
   localStorage.setItem("tasks", JSON.stringify(newState));

@@ -1,5 +1,6 @@
 import style from "./Task.module.scss";
-import { setTaskDone, getTasks } from "../../../../api/toDoApi";
+import { setTaskDone, getTasks, deleteTask } from "../../../../api/toDoApi";
+import trashIcon from "../../../../assets/trash_white.svg";
 
 const Task = ({ title, isDone, creared, category, id, tasksChanged }) => {
   let checkBoxStyle = {
@@ -13,8 +14,14 @@ const Task = ({ title, isDone, creared, category, id, tasksChanged }) => {
     color: "#797b82",
     border: "2px solid #262a3f",
   };
+
   let handleTaskClick = (category, id) => {
     setTaskDone(category, id);
+    tasksChanged(getTasks());
+  }
+
+  let handleTaskDelete = (category, id) => {
+    deleteTask(category, id);
     tasksChanged(getTasks());
   }
   return (
@@ -32,6 +39,10 @@ const Task = ({ title, isDone, creared, category, id, tasksChanged }) => {
         <p>{title}</p>
       </div>
       <div className={style.info_block}>
+        <div className={style.delete_block}
+             onClick={()=> handleTaskDelete(category, id)}>
+          <img src={trashIcon} alt=""/>
+        </div>
         <span>{creared}</span>
         <span>{category}</span>
       </div>

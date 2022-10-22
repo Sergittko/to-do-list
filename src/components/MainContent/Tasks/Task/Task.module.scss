@@ -29,6 +29,31 @@
   .info_block {
     display: flex;
     flex-direction: column;
+    position: relative;
+
+    .delete_block {
+      position: absolute;
+      top: 2px;
+      right: 0%;
+      width: 30px;
+      margin: 0 4px 0 0;
+      height: 90%;
+      color: black;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      opacity: 0;
+      transition: 0.1s;
+      z-index: 0;
+
+      img {
+        padding: 5px;
+        object-fit: cover;
+        overflow: hidden;
+      }
+    }
 
     span {
       min-width: 70px;
@@ -38,11 +63,38 @@
       text-align: center;
       color: #a2693a;
       background-color: #392d31;
+      z-index: 22;
     }
 
     span:nth-child(2) {
       color: #4866bf;
       background-color: #242b48;
     }
+  }
+}
+
+.task:hover > .info_block div {
+  opacity: 1;
+  animation: slideOut 0.4s ease 0s 1 normal both;
+}
+
+@keyframes slideOut {
+  0% {
+    right: 50%;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0;
+  }
+
+  50% {
+    right: 105%;
+    opacity: 1;
+  }
+
+  100% {
+    right: 100%;
+    opacity: 1;
   }
 }

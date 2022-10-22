@@ -24,7 +24,11 @@ const ToDo = () => {
               tasksData={tasks}
               tasksChanged={tasksChanged}
             />
-            <TasksContainer chosenCategory={chosenCategory} tasksData={tasks} tasksChanged={tasksChanged}/>
+            <TasksContainer
+              chosenCategory={chosenCategory}
+              tasksData={tasks}
+              tasksChanged={tasksChanged}
+            />
             <TaskInput tasksData={tasks} tasksChanged={tasksChanged} />
           </div>
         </div>

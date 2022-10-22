@@ -1,10 +1,15 @@
 import style from "./Categories.module.scss";
 import AddCategoryCard from "./AddCategoryCard/AddCategoryCard";
 import Card from "./Card/Card";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Categories = (props) => {
   let [categoryMode, setCategoryMode] = useState(false);
+
+  useEffect(() => {
+    if (categoryMode) document.body.style.overflow = 'hidden';
+    if (!categoryMode) document.body.style.overflow = 'unset';
+  }, [categoryMode])
 
   let countProgress = (allTasks) => {
     let isDone = 0;

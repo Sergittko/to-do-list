@@ -1,5 +1,5 @@
 import style from "./Header.module.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import defaultImage from "../../assets/defaultUser.png";
 import toDo from "../../assets/toDo-Icon.png";
 import UserMenu from "./UserMenu/UserMenu";
@@ -20,6 +20,11 @@ const Header = (props) => {
   const d = new Date();
   let day = weekday[d.getDay()];
   let date = d.getDate();
+
+  useEffect(() => {
+    if (menu) document.body.style.overflow = 'hidden';
+    if (!menu) document.body.style.overflow = 'unset';
+  }, [menu])
 
   return (
     <div className={style.hedaer_container}>

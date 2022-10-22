@@ -8,12 +8,6 @@ html {
 body {
   font-family: "Mitr", sans-serif;
   background: #1f2032;
-  // background: rgb(18, 30, 65);
-  // background: linear-gradient(
-  //   180deg,
-  //   rgba(18, 30, 65, 1) 0%,
-  //   rgba(19, 19, 44, 1) 70%
-  // );
   background-attachment: fixed;
   position: relative;
   color: #b5b8c1;
@@ -40,4 +34,19 @@ body {
   margin: 0 auto;
   padding: 80px 10px;
   z-index: 100;
+}
+
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1f2033;
+}
+
+body::-webkit-scrollbar-thumb {
+  border: 2px solid #262a3f;
+  border-radius: 20px;
+  background-color: #636370;
 }

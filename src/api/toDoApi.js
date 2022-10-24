@@ -87,3 +87,9 @@ export const setNewCategory = (categoryName) => {
   };
   localStorage.setItem("tasks", JSON.stringify(newState));
 };
+
+export const deleteCategory = (category) => {
+  let taskState = getTasks();
+  delete taskState[category];
+  localStorage.setItem("tasks", JSON.stringify(taskState));
+};

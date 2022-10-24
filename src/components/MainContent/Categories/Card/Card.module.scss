@@ -22,7 +22,7 @@
   transition: 0.2s ease;
   border: 2px solid #262a3f;
 
-  img {
+  .background_image img {
     position: absolute;
     z-index: 0;
     opacity: 0.3;
@@ -46,7 +46,7 @@
       rgba(139, 42, 95, 1) 100%
     );
 
-    img {
+    .background_image img {
       filter: blur(0.4px) hue-rotate(117deg);
       transform: rotate(180deg);
     }
@@ -80,8 +80,48 @@
       position: relative;
     }
   }
+
+  .delete_block {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    width: 30px;
+    cursor: pointer;
+    display: flex;
+    opacity: 0;
+
+    img {
+      padding: 5px;
+      object-fit: cover;
+      overflow: hidden;
+    }
+  }
 }
 
+.category_wrapper:hover > .delete_block {
+  opacity: 1;
+  animation: slideOut 0.4s ease 0s 1 normal both;
+}
+@keyframes slideOut {
+  0% {
+    opacity: 0;
+    bottom: -20px;
+  }
+
+  15% {
+    opacity: 0;
+  }
+
+  50% {
+    bottom: 8px;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    bottom: 4px;
+  }
+}
 @media only screen and (max-width: 420px) {
   .category_wrapper {
     width: 150px;

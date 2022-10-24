@@ -18,12 +18,12 @@ const Task = ({ title, isDone, creared, category, id, tasksChanged }) => {
   let handleTaskClick = (category, id) => {
     setTaskDone(category, id);
     tasksChanged(getTasks());
-  }
+  };
 
   let handleTaskDelete = (category, id) => {
     deleteTask(category, id);
     tasksChanged(getTasks());
-  }
+  };
   return (
     <div
       className={style.task}
@@ -39,9 +39,11 @@ const Task = ({ title, isDone, creared, category, id, tasksChanged }) => {
         <p>{title}</p>
       </div>
       <div className={style.info_block}>
-        <div className={style.delete_block}
-             onClick={()=> handleTaskDelete(category, id)}>
-          <img src={trashIcon} alt=""/>
+        <div
+          className={style.delete_block}
+          onClick={() => handleTaskDelete(category, id)}
+        >
+          <img src={trashIcon} alt="" />
         </div>
         <span>{creared}</span>
         <span>{category}</span>

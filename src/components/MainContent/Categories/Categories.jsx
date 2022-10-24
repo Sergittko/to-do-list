@@ -64,7 +64,8 @@ const Categories = (props) => {
               radius={radius}
               circleStyle={circleStyle}
               percent={percent}
-              changeCategory={() => props.changeCategory(el)}
+              changeCategory={props.changeCategory}
+              tasksChanged={props.tasksChanged}
             />
           );
         })}

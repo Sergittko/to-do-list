@@ -27,6 +27,9 @@
     border-radius: 10px;
     padding: 5px;
     margin: 0 5px;
+    width: 100%;
+    max-width: 120px;
+    min-width: 50px;
 
     option {
       background-color: rgba(255, 255, 255, 0.5);
@@ -72,7 +75,6 @@
 //     width: 100%;
 //   }
 // }
-
 @media only screen and (max-width: 754px) {
   .input_container {
     width: calc(100% - 50px);

@@ -6,9 +6,9 @@
   flex-direction: column;
   overflow-y: clip;
   cursor: pointer;
-  width: 160px;
+  min-width: 160px;
   height: 184px;
-  margin: 0 20px;
+  margin: 0 10px;
   text-align: center;
   font-size: 18px;
   padding: 10px;
@@ -36,6 +36,11 @@
   & > span {
     margin: auto;
     z-index: 0;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: -webkit-fill-available;
+    overflow: hidden;
   }
 
   &:nth-child(even) {

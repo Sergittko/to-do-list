@@ -1,5 +1,6 @@
 import style from "./AddCategoryCard.module.scss";
 import { useState } from "react";
+import cross from "../../../../assets/cross.svg";
 import { setNewCategory, getTasks } from "../../../../api/toDoApi";
 
 const AddCategoryCard = (props) => {
@@ -39,6 +40,12 @@ const AddCategoryCard = (props) => {
           />
           <input type="submit" value="Submit" />
         </form>
+        <div
+          className={style.cross_button}
+          onClick={() => props.setCategoryMode(false)}
+        >
+          <img src={cross} alt="" />
+        </div>
       </div>
     </div>
   );

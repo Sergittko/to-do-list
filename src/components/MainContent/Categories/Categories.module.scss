@@ -17,7 +17,12 @@
     content: "";
     z-index: 1;
     background: #222435;
-    background: linear-gradient(90deg, #222435 0%, #222435 50%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(
+      90deg,
+      #222435 0%,
+      #222435 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
   }
 
   &:after {
@@ -29,7 +34,12 @@
     content: "";
     z-index: 1;
     background: #222435;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #222435 50%, #222435 100%);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      #222435 50%,
+      #222435 100%
+    );
   }
 
   h2 {

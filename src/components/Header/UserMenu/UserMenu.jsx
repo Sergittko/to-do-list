@@ -1,5 +1,6 @@
 import style from "./UserMenu.module.scss";
 import { useState } from "react";
+import cross from "../../../assets/cross.svg";
 import { getTasks, getName, setName, setUserImage } from "../../../api/toDoApi";
 
 const UserMenu = (props) => {
@@ -49,6 +50,12 @@ const UserMenu = (props) => {
           />
           <input type="submit" value="Submit" />
         </form>
+        <div
+          className={style.cross_button}
+          onClick={() => props.menuMode(false)}
+        >
+          <img src={cross} alt="" />
+        </div>
       </div>
     </div>
   );

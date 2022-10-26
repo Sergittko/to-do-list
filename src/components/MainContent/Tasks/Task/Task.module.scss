@@ -57,7 +57,11 @@
         object-fit: cover;
         overflow: hidden;
         background: rgb(32, 33, 49);
-        background: linear-gradient(90deg, rgba(32, 33, 49, 0) 0%, rgba(32, 33, 49, 1) 21%);
+        background: linear-gradient(
+          90deg,
+          rgba(32, 33, 49, 0) 0%,
+          rgba(32, 33, 49, 1) 21%
+        );
       }
     }
 

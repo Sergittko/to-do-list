@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
   overflow-y: clip;
   cursor: pointer;
@@ -34,7 +34,7 @@
   }
 
   & > span {
-    margin: auto;
+    margin: 0 0 10px;
     z-index: 0;
     text-decoration: none;
     text-overflow: ellipsis;
@@ -129,8 +129,12 @@
 }
 @media only screen and (max-width: 420px) {
   .category_wrapper {
-    width: 150px;
+    min-width: 140px;
     height: 150px;
     margin: 0 5px;
+
+    span {
+      margin: auto;
+    }
   }
 }

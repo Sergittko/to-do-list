@@ -12,7 +12,7 @@ const Task = ({ title, isDone, creared, category, id, tasksChanged }) => {
     // filter: 'brightness(0.7)',
     borderRadius: "10px",
     color: "#797b82",
-    border: "2px solid #262a3f",
+    border: "1px solid #262a3f",
   };
 
   let handleTaskClick = (category, id) => {

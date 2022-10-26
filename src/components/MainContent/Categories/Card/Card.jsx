@@ -16,7 +16,7 @@ const Card = ({
     changeCategory("No section");
     tasksChanged(getTasks);
   };
-  // <div className={style.category_wrapper} onClick={() => changeCategory()}>
+
   return (
     <div
       className={style.category_wrapper}
@@ -29,13 +29,13 @@ const Card = ({
       </div>
       <span>{name}</span>
       <div className={style.progress_wrapper}>
-        <svg className={style.progress_ring} width="120" height="120">
+        <svg className={style.progress_ring} width="100" height="100">
           <circle
             className={style.progress_ring__circle}
             stroke="#c6e5d7"
             strokeWidth="10"
-            cx="60"
-            cy="60"
+            cx="50%"
+            cy="50%"
             r={radius}
             fill="transparent"
           />
@@ -43,8 +43,8 @@ const Card = ({
             className={style.progress_ring__circle}
             stroke="#31d255"
             strokeWidth="10"
-            cx="60"
-            cy="60"
+            cx="50%"
+            cy="50%"
             r={radius}
             fill="transparent"
             style={circleStyle}

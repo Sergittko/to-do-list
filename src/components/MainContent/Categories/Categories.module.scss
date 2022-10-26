@@ -17,12 +17,7 @@
     content: "";
     z-index: 1;
     background: #222435;
-    background: linear-gradient(
-      90deg,
-      #222435 0%,
-      #222435 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
+    background: linear-gradient(90deg, #222435 0%, #222435 50%, rgba(255, 255, 255, 0) 100%);
   }
 
   &:after {
@@ -34,12 +29,7 @@
     content: "";
     z-index: 1;
     background: #222435;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0) 0%,
-      #222435 50%,
-      #222435 100%
-    );
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #222435 50%, #222435 100%);
   }
 
   h2 {
@@ -73,6 +63,7 @@
       &:hover {
         transform: scale(1.03);
       }
+
       &:active {
         transform: scale(0.97);
       }
@@ -105,7 +96,7 @@
 }
 @media only screen and (max-width: 420px) {
   .section_container {
-    margin: 10px auto 0;
+    margin: 0 auto;
     padding: 5px 10px;
 
     h2 {
@@ -123,6 +114,12 @@
 
     &:after {
       height: calc(100% - 11px);
+    }
+  }
+
+  .section_container nav {
+    &::-webkit-scrollbar {
+      height: 2px;
     }
   }
 }

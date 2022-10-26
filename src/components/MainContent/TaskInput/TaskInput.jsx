@@ -9,7 +9,7 @@ const TaskInput = ({ tasksData, tasksChanged }) => {
     let title = event.target[0].value;
     let category = event.target[1].value;
     if (title.length > 1) {
-      setNewTask(title, category);
+      setNewTask(title.charAt(0).toUpperCase() + title.slice(1), category);
       tasksChanged(getTasks());
       // changeSelect("No section");
       changeText("");

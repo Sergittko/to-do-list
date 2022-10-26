@@ -36,11 +36,12 @@
 
     .delete_block {
       position: absolute;
-      top: 2px;
+      top: 0;
+      bottom: 0;
       right: 0;
       width: 30px;
       margin: 0 4px 0 0;
-      height: 90%;
+      height: inherit;
       color: black;
       text-align: center;
       cursor: pointer;
@@ -55,8 +56,8 @@
         padding: 5px;
         object-fit: cover;
         overflow: hidden;
-        background: rgb(32,33,49);
-        background: linear-gradient(90deg, rgba(32,33,49,0) 0%, rgba(32,33,49,1) 21%);
+        background: rgb(32, 33, 49);
+        background: linear-gradient(90deg, rgba(32, 33, 49, 0) 0%, rgba(32, 33, 49, 1) 21%);
       }
     }
 
@@ -100,5 +101,12 @@
   100% {
     right: 100%;
     opacity: 1;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .task {
+    padding: 5px 7px;
+    margin: 5px 0 0;
+    border: 1px solid #262a3f;
   }
 }

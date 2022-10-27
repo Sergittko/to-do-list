@@ -23,6 +23,7 @@ const LoginWindow = (props) => {
           type="text"
           placeholder="Type task"
           value={name}
+          maxLength="50"
           onChange={(e) => setName(e.target.value)}
           autoFocus
         />

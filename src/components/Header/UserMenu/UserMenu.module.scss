@@ -1,9 +1,4 @@
 .menu_container {
-  // position: absolute;
-  // // width: 100px;
-  // // height: 100px;
-  // top: 0;
-  // right: 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -35,9 +30,7 @@
       display: flex;
       flex-direction: column;
       padding: 5px;
-      // background-color: rgba(255, 255, 255, 0.3);
       border-radius: 50px;
-      // height: 50px;
       width: fit-content;
       justify-content: center;
       align-items: center;
@@ -61,8 +54,18 @@
         border-radius: 30px;
         padding: 5px 10px;
         font-size: 16px;
-        margin: 0 0 0 5px;
+        margin: 5px 0 0 0;
         cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+          background-color: #93939b;
+          color: #ececec;
+        }
+
+        &:active {
+          transform: scale(0.96);
+        }
       }
 
       input[type="text"] {
@@ -74,11 +77,13 @@
         }
       }
     }
+
     .cross_button {
       position: absolute;
       top: 10px;
       right: 10px;
       cursor: pointer;
+
       img {
         width: 13px;
         height: 13px;

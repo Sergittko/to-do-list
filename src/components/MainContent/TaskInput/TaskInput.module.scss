@@ -5,7 +5,6 @@
   right: 0;
   margin: auto;
   max-width: 950px;
-  // width: fit-content;
   width: calc(100% - 50px);
   height: 45px;
   display: flex;
@@ -22,7 +21,6 @@
   }
 
   select {
-    // background-color: rgba(255, 255, 255, 0.3);
     background-color: #93939b;
     border-radius: 10px;
     padding: 5px;
@@ -30,6 +28,15 @@
     width: 100%;
     max-width: 120px;
     min-width: 50px;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: #b1b2b7;
+    }
+
+    &:focus {
+      background-color: #787a87;
+    }
 
     option {
       background-color: rgba(255, 255, 255, 0.5);
@@ -40,19 +47,36 @@
   input[type="submit"] {
     width: fit-content;
     color: #636374;
-    // background-color: rgba(255, 255, 255, 0.5);
     background-color: #b1b2b7;
     border-radius: 30px 50px 50px 30px;
     padding: 5px;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: #93939b;
+      color: #ececec;
+    }
+
+    &:active {
+      transform: scale(0.96);
+    }
   }
 
   input[type="text"] {
-    // background-color: rgba(255, 255, 255, 0.1);
     background-color: #73747e;
     border-radius: 50px 30px 30px 50px;
     padding: 5px 10px;
     min-width: 300px;
     width: 100%;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: #93939b;
+    }
+
+    &:focus {
+      background-color: #6f707b;
+    }
 
     &::placeholder {
       color: #b1b1b9;
@@ -61,20 +85,9 @@
 }
 
 .input_container:focus-within {
-  // width: 80%;
   width: calc(100% - 50px);
-  animation-duration: 1s;
-  // animation-name: stretchOut;
 }
-// @keyframes stretchOut {
-//   from {
-//     width: 40%;
-//   }
-//
-//   to {
-//     width: 100%;
-//   }
-// }
+
 @media only screen and (max-width: 754px) {
   .input_container {
     width: calc(100% - 50px);

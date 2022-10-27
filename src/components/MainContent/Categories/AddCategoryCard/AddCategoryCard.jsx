@@ -36,6 +36,8 @@ const AddCategoryCard = (props) => {
             placeholder="Type category"
             autoFocus
             value={name}
+            spellCheck="false"
+            maxLength="50"
             onChange={(e) => setName(e.target.value)}
           />
           <input type="submit" value="Submit" />

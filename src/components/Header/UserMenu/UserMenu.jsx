@@ -45,6 +45,8 @@ const UserMenu = (props) => {
             type="text"
             placeholder="Type new name"
             autoFocus
+            spellCheck="false"
+            maxLength="50"
             value={name}
             onChange={(e) => setNameInput(e.target.value)}
           />

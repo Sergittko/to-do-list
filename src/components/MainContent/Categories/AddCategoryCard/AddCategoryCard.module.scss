@@ -43,6 +43,16 @@
         font-size: 16px;
         margin: 0 0 0 5px;
         cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+          background-color: #93939b;
+          color: #ececec;
+        }
+
+        &:active {
+          transform: scale(0.96);
+        }
       }
 
       input[type="text"] {
@@ -58,11 +68,13 @@
         }
       }
     }
+
     .cross_button {
       position: absolute;
       top: 10px;
       right: 10px;
       cursor: pointer;
+
       img {
         width: 15px;
         height: 15px;

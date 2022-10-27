@@ -57,18 +57,19 @@
     padding: 10px 0;
 
     .add_cathegory_container {
-      width: 100px;
-      height: 100px;
+      width: min-content;
       border: solid 2px #38a150;
       background-color: #31d255;
-      color: #1f2030;
-      border-radius: 20%;
+      padding: 10px;
+      color: #2e2e34;
+      border-radius: 25px;
       text-align: center;
       align-items: center;
       display: flex;
       cursor: pointer;
       transition: 0.2s;
-      font-size: 16px;
+      font-size: 14px;
+      margin: 0 10px 0 0;
 
       &:hover {
         transform: scale(1.03);

@@ -1,6 +1,6 @@
 # To do list 📝
 
-## This is a To-do list made by using React JS ![](https://img.shields.io/badge/-464f5c?style=flat&logo=React).
+## This is a To-do list made by using React JS <img src="https://img.shields.io/badge/-464f5c?style=flat&logo=React">.
 
 ### Functionality, this app can:
 *	Add, delete, complete tasks.

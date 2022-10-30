@@ -18,12 +18,12 @@
  
 <p align="center">
 1) Start of using application: <br/>
-<img src="https://user-images.githubusercontent.com/62090645/198835627-2936267d-835e-4da9-88a3-4858dbf19b86.gif" width="400"> <br/>
+<img src="https://user-images.githubusercontent.com/62090645/198835627-2936267d-835e-4da9-88a3-4858dbf19b86.gif" width="550"> <br/>
 </p>
 
 <p align="center">
 2) Application functionality: <br/>
-<img src="[https://user-images.githubusercontent.com/62090645/198835627-2936267d-835e-4da9-88a3-4858dbf19b86.gif](https://user-images.githubusercontent.com/62090645/198835658-dddb48f0-1ade-44ab-848a-cd63285fe0d1.webm)" width="400"> <br/>
+<img src="https://user-images.githubusercontent.com/62090645/198883133-d42ad537-54d4-455a-b522-538bf25c7790.gif" width="550"> <br/>
 </p>
 
 `Done by Sergio Diorov`
